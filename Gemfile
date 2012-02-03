@@ -17,8 +17,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'haml'
-gem 'slim-rails'
+gem 'haml-rails'
+# gem 'slim-rails'
 
 group :development do
 	gem 'rspec-rails', '2.6.1'

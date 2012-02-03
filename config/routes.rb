@@ -1,4 +1,8 @@
 Ipt2::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/feedback"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

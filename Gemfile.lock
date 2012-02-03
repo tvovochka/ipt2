@@ -43,6 +43,11 @@ GEM
     execjs (1.3.0)
       multi_json (~> 1.0)
     haml (3.1.4)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.19)
@@ -103,20 +108,11 @@ GEM
       railties (~> 3.1.0)
       sass (~> 3.1.10)
       tilt (~> 1.3.2)
-    slim (1.1.0)
-      temple (~> 0.3.5)
-      tilt (~> 1.3.2)
-    slim-rails (1.0.2)
-      actionpack (~> 3.0)
-      activesupport (~> 3.0)
-      railties (~> 3.0)
-      slim (~> 1.0)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.5-x86-mingw32)
-    temple (0.3.5)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -136,12 +132,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.1.1)
-  haml
+  haml-rails
   jquery-rails
   rails (= 3.1.3)
   rspec-rails (= 2.6.1)
   sass-rails (~> 3.1.5)
-  slim-rails
   sqlite3 (= 1.3.5)
   uglifier (>= 1.0.3)
   webrat (= 0.7.1)
