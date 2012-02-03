@@ -1,0 +1,7 @@
+!!!
+%html{ html_attrs('ru')}
+  %head
+    %title ГБОУ СПО СО Ирбитский политехникум | #{@title}
+    = csrf_meta_tag
+  %body
+    = yield
