@@ -1,7 +1,8 @@
 !!!
 %html{ html_attrs('ru')}
   %head
-    %title ГБОУ СПО СО Ирбитский политехникум | #{@title}
+    %title #{title}
     = csrf_meta_tag
+    = stylesheet_link_tag 'main', :media => 'screen'
   %body
     = yield
