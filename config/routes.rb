@@ -1,9 +1,9 @@
 Ipt2::Application.routes.draw do
-  get "pages/home"
+  
+  match '/about', :to => 'pages#about'
+  match '/feedback', :to => 'pages#feedback'
 
-  get "pages/feedback"
-
-  get "pages/about"
+  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
