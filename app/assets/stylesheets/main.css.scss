@@ -11,6 +11,7 @@ $logo_top: 20px;
   -webkit-border-radius: $radius;
   -khtml-border-radius: $radius;
 }
+$auth_left: 10px;
 
 img {
   border: 0px;
@@ -74,5 +75,34 @@ nav {
         color: #005698;
       }
     }
+  }
+}
+
+.auth {
+  @include radius;
+  background: #175787 url('fon_auth.jpg') top right no-repeat;
+  position: absolute;
+  right: $logo_right;
+  top: 225px;
+  width: 181px;
+  height: 144px;
+
+  p {
+    @include marpad;
+    font: bold 12px Arial;
+    color: #fff;
+    margin-left: $auth_left;
+    margin-top: $auth_left;
+    line-height: 0.90;
+    text-shadow: #000 1px 1px 0;
+
+    span {
+      font: 900 13px Arial;
+    }
+  }
+  img {
+    position: absolute;
+    right: $auth_left;
+    top: 6px;
   }
 }
