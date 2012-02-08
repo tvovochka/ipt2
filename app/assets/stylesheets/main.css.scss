@@ -1,4 +1,69 @@
-body {
+$radius: 10px;
+$logo_right: 25px;
+$logo_top: 20px;
+@mixin marpad {
   margin: 0px;
   padding: 0px;
+}
+
+img {
+  border: 0px;
+}
+
+.title {
+  @include marpad;
+  position: absolute;
+  right: 70px + $logo_right;
+  top: $logo_top;
+  height: 70px;
+  width: 505px;
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -khtml-border-radius: $radius;
+  background: #fff;
+  background-color: rgba(255,255,255,0.5);
+  text-shadow: #fff 1px 1px 0;
+  
+
+  h1 {
+    font: bold 26px "Arial";
+    @include marpad;
+    margin-left: 20px;
+    margin-top: 5px;
+    letter-spacing: -0.05em;
+    line-height: 1.3;
+    position: relative;
+
+  }
+
+  p {
+    @include marpad;
+    margin-left: 20px;
+    font: bold 12px Arial;
+    line-height: 0.9;
+    color: #144163;
+    
+  }
+}
+
+.logo {
+  position: absolute;
+  right: $logo_right;
+  top: $logo_top;
+}
+
+/* Навигация */
+nav {
+  font: bold 13px Arial;
+  line-height: 2;
+  ul {
+    list-style-image: url('nav_li_main.gif');
+    li {
+      padding-left: 5px;
+      a {
+        color: #005698;
+      }
+    }
+  }
 }

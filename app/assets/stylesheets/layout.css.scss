@@ -1,0 +1,51 @@
+$width_basic: 990px;
+$color_back: #fff;
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+#page {
+  min-width: $width_basic;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: $color_back url('background.jpg') top center no-repeat;
+}
+
+header {
+  height: 422px;
+  width: $width_basic;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  text-align: left;
+}
+
+section {
+  width: $width_basic;
+  margin: 0 auto;
+  text-align: left;
+  display: block;
+  #left {
+    float: left;
+    width: 200px;
+  }
+  #center {
+    float: left;
+    width: 760px;
+    margin-left: 20px;
+  }
+}
+
+footer {
+  min-width: $width_basic;
+  width: 100%;
+  margin: 0 auto;
+  height: 240px;
+  clear: both;
+  background: $color_back url('footer.jpg') bottom center no-repeat;
+  display: block;
+}
+

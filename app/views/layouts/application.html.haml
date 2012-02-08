@@ -1,8 +1,15 @@
-!!!
+!!! html
 %html{ html_attrs('ru')}
   %head
     %title #{title}
     = csrf_meta_tag
-    = stylesheet_link_tag 'main', :media => 'screen'
+    = render 'layouts/stylesheets'
   %body
-    = yield
+    #page
+      = render 'layouts/header'
+      %section
+        #left
+          = render 'layouts/nav'
+        #center
+          = yield
+      = render 'layouts/footer'
