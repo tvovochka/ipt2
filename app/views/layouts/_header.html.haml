@@ -5,8 +5,6 @@
     %p 
       = link_to "Государственное бюджетное образовательное учреждение среднего профессионального образования Свердловской области", root_path
 
-  - logo = image_tag("logo.png", :alt => "Логотип Ирбитского политехникума", :class => "logo")
-
   = link_to logo, root_path
 
   .auth
@@ -15,5 +13,5 @@
       %br
       %span 
         пользователей
-    - user_icon = image_tag("user_icon.png", :alt => "Add User")
+    
     = link_to user_icon, signup_path

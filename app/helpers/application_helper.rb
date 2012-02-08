@@ -11,4 +11,14 @@ module ApplicationHelper
     end
   end
 
+  def logo
+    image_tag("logo.png", :alt => "Логотип Ирбитского политехникума", 
+      :class => "logo")
+  end
+
+  def user_icon
+    image_tag("user_icon.png", :alt => "Add User", 
+      :title => "Добавить пользователя")
+  end
+
 end
