@@ -78,6 +78,7 @@ nav {
   }
 }
 
+/* Аутентификация */
 .auth {
   @include radius;
   background: #175787 url('fon_auth.jpg') top right no-repeat;

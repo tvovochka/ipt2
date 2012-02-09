@@ -2,6 +2,7 @@ Ipt2::Application.routes.draw do
 
   root :to => 'pages#home'
   
+  resources :users
   match "/signup", :to => 'users#new'
 
   match '/about', :to => 'pages#about'
