@@ -34,6 +34,9 @@ group :test do
   gem 'factory_girl_rails'
 end
 
+# gems specifically for Heroku go here
+gem "pg"
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
