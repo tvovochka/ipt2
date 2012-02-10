@@ -18,6 +18,7 @@ end
 
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'gravatar_image_tag'
 # gem 'slim-rails'
 
 group :development do
@@ -30,6 +31,7 @@ group :test do
 	gem 'webrat', '0.7.1'
 	# ускоряет выполнение тестов
 	gem 'spork'
+  gem 'factory_girl_rails'
 end
 
 # To use ActiveModel has_secure_password
