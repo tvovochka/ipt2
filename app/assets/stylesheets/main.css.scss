@@ -107,3 +107,18 @@ nav {
     top: 6px;
   }
 }
+
+/* flash message */
+.flash {
+  @include radius;
+  border: 2px solid;
+  padding: 10px;
+  font: bold 14px Arial;
+  color: #005698;
+  .success {
+    border-color: #265A81;
+  }
+  .error {
+    border-color: red;
+  }
+}

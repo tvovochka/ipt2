@@ -1,0 +1,9 @@
+- if @user.errors.any?
+  #error_explanation
+    %h3
+      = pluralize(@user.errors.count, "error")
+      возникло при попытке сохранения нового пользователя!:
+    %p Следующие поля заполненны не верно:
+    %ul
+      - @user.errors.full_messages.each do |msg|
+        %li #{msg}

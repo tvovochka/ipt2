@@ -1,2 +1,22 @@
-%h1 Users#new
-%p Find me in app/views/users/new.html.haml
+%h2 Регистрация 
+
+= form_for(@user) do |f|
+  = render 'shared/error_messages'
+  .field
+    = f.label :name, "Имя"
+    %br
+    = f.text_field :name
+  .field
+    = f.label :email
+    %br
+    = f.text_field :email
+  .field
+    = f.label :password, "Пароль"
+    %br
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation, "Подтверждение"
+    %br
+    = f.password_field :password_confirmation
+  .actions
+    = f.submit "Зарегистрироваться"
