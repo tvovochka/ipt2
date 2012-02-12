@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       @title = "Регистрация"
+      @user.password = ""
       render 'new'
     end
   end
