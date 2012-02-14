@@ -1,9 +1,15 @@
 Ipt2::Application.routes.draw do
 
+  get "sessions/new"
+
   root :to => 'pages#home'
   
   resources :users
-  match "/signup", :to => 'users#new'
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  match "/signup",  :to => 'users#new'
+  match "/signin",  :to => 'sessions#new'
+  match "/signout", :to => 'sessions#destroy'
 
   match '/about', :to => 'pages#about'
   match '/feedback', :to => 'pages#feedback'

@@ -34,4 +34,39 @@ describe "LayoutLinks" do
 
   end
 
+  describe "when not signed in" do
+    it "should have a signin link" do
+      visit root_path
+      response.should have_selector('form input', :type => "submit",
+                                      :value => "ВХОД")
+      response.should have_selector('form input#session_email')
+      response.should have_selector('.auth a', :href => signup_path)
+    end
+  end
+
+  describe "when signed in" do
+
+    before(:each) do
+      @user = Factory(:user)
+      visit signin_path
+      fill_in "Email", :with => @user.email
+      fill_in "Пароль", :with => @user.password
+      click_button
+    end
+
+    it "should have a signout link" do
+      visit root_path
+      response.should have_selector("div.auth p", :content => "Имя:")
+      response.should have_selector("form input", :type => "submit", 
+                                    :value => "ВЫХОД")
+    end
+
+    it "should have a profile link" do
+      visit root_path
+      response.should have_selector("a", :href => user_path(@user),
+                                          :content => "профиль")
+    end
+
+  end
+
 end

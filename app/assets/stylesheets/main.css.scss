@@ -1,11 +1,10 @@
-$radius: 10px;
 $logo_right: 25px;
 $logo_top: 20px;
 @mixin marpad {
   margin: 0px;
   padding: 0px;
 }
-@mixin radius {
+@mixin radius($radius) {
   border-radius: $radius;
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
@@ -13,13 +12,9 @@ $logo_top: 20px;
 }
 $auth_left: 10px;
 
-img {
-  border: 0px;
-}
-
 .title {
   @include marpad;
-  @include radius;
+  @include radius(10px);
   position: absolute;
   right: 70px + $logo_right;
   top: $logo_top;
@@ -49,7 +44,7 @@ img {
     margin-left: 20px;
     font: bold 12px Arial;
     line-height: 0.9;
-    
+
     a {
       color: #144163;
       text-decoration: none;
@@ -80,7 +75,7 @@ nav {
 
 /* Аутентификация */
 .auth {
-  @include radius;
+  @include radius(10px);
   background: #175787 url('fon_auth.jpg') top right no-repeat;
   position: absolute;
   right: $logo_right;
@@ -100,25 +95,68 @@ nav {
     span {
       font: 900 13px Arial;
     }
+
+    a {
+      color: #fff;
+    }
+
   }
   img {
     position: absolute;
     right: $auth_left;
     top: 6px;
   }
+
+  form {
+    @include marpad;
+    margin: 10px 0px 0px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    .field {
+      @include marpad;
+      margin-bottom: 5px;
+      input {
+        @include radius(3px);
+        border: 3px solid;
+        width: 145px;
+        height: 23px;
+        border-color: #5b92bc;
+        padding: 0 5px;
+        color: #335e80;
+      }
+    }
+    .actions {
+      text-align: right;
+      @include marpad;
+      input {
+        @include marpad;
+        background: transparent url('button.png') center center no-repeat;
+        border: none;
+        width: 80px;
+        height: 22px;
+        font: bold 11px Arial;
+        color: #485d6d;
+        text-shadow: #fff 1px 1px 0;
+      }
+    }
+  }
 }
 
 /* flash message */
 .flash {
-  @include radius;
+  @include radius(5px);
   border: 2px solid;
   padding: 10px;
   font: bold 14px Arial;
   color: #005698;
-  .success {
-    border-color: #265A81;
-  }
-  .error {
-    border-color: red;
-  }
+  border-color: #265A81;
+}
+
+.success {
+  border-color: #265A81;
+}
+
+.error {
+  color: red;
 }

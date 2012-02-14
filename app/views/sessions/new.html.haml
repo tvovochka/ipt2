@@ -1,0 +1,17 @@
+%h2 Вход пользователя
+
+= form_for(:session, :url => sessions_path) do |f|
+  .field
+    = f.label :email
+    %br
+    = f.email_field :email, { :placeholder => "user@example.ru" , :autofocus => true, :required => true }
+  .field
+    = f.label :password, "Пароль"
+    %br
+    = f.password_field :password, :required => true
+  .actions
+    = f.submit "Войти"
+
+%p 
+  Новый пользователь?
+  = link_to "Зарегистрироваться", signup_path

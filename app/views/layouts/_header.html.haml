@@ -8,10 +8,36 @@
   = link_to logo, root_path
 
   .auth
-    %p
-      Вход для 
-      %br
-      %span 
-        пользователей
+    - if !signed_in?
+      %p
+        Вход для 
+        %br
+        %span 
+          пользователей
     
-    = link_to user_icon, signup_path
+      = link_to user_icon, signup_path
+
+      = form_for(:session, :url => sessions_path) do |f|
+        .field
+          = f.email_field :email, { :placeholder => "user@example.ru", :required => true }
+        .field
+          = f.password_field :password, { :required => true, :placeholder => "***********" }
+        .actions
+          = f.submit "ВХОД"
+    - else
+      %p
+        Имя: 
+        %br 
+        %span
+          = current_user.name
+      %p 
+        Email:
+        %br
+        %span
+          = current_user.email 
+      %p
+        = link_to "Редактировать профиль", current_user
+      = form_for(:session, :url => signout_path, :method => :delete) do |f|
+        .actions
+          = f.submit "ВЫХОД"
+    
