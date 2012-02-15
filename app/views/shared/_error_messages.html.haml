@@ -1,9 +1,9 @@
-- if @user.errors.any?
+- if object.errors.any?
   #error_explanation
     %h3
-      = pluralize(@user.errors.count, "error")
-      возникло при попытке сохранения нового пользователя!:
+      = pluralize(object.errors.count, "error")
+      возникло при попытке сохранения #{ object.class.to_s.underscore.humanize.downcase }!:
     %p Следующие поля заполненны не верно:
     %ul
-      - @user.errors.full_messages.each do |msg|
+      - object.errors.full_messages.each do |msg|
         %li #{msg}

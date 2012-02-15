@@ -1,2 +1,44 @@
 %footer
-  
+  .footer_content
+    .feedback
+      СВЯЗАТЬСЯ
+      %span
+        С НАМИ
+      = mail_to "info@ipt66.ru"
+    .contacts
+      %p ГБОУ СПО СО "Ирбитский политехникум"
+      %p.p2 г.Ирбит, ул.Южная, 12.
+      %p.tel.p3 
+        8(34355)
+        %span 3-88-37
+      %p.tel.p4
+        8(34355)
+        %span 3-86-29
+        %span.fax (факс)
+
+    .search
+      = image_tag("lupa.gif", :alt => "", :class => "lupa")
+
+
+    .developers
+      .artgrand
+        = link_to "http://artgrand.net", :title => "Разработчик дизайна", :target => "_blank" do
+          = image_tag("artgrand_logo.png", :alt => "", :class => 'artgrand_logo')
+          %div 
+            Design by
+            %br
+            %span
+              ARTGRAND
+      .delim
+        = image_tag("delim.gif", :alt => "")
+      .artgrand
+        = link_to "http://tvovochka.ru", :title => "Разработчик сайта", :target => "_blank" do
+          %div 
+            Разработчик
+            %br
+            %span
+              TVovochka
+          = image_tag("my_logo.png", :alt => "", :class => 'artgrand_logo')
+
+
+      

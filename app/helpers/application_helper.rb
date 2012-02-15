@@ -21,4 +21,9 @@ module ApplicationHelper
       :title => "Добавить пользователя")
   end
 
+  def artgrand
+    out = image_tag("artgrand_logo.png", :alt => "", :class => 'artgrand_logo')
+    out << "<p>Design by <br /> <span>ARTGRAND</span></p>" 
+  end
+
 end

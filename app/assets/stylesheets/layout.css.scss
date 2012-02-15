@@ -1,5 +1,6 @@
 $width_basic: 990px;
 $color_back: #fff;
+$border: 0px;
 
 body {
   margin: 0px;
@@ -7,6 +8,7 @@ body {
 }
 
 #page {
+  border: $border solid;
   min-width: $width_basic;
   width: 100%;
   margin: 0 auto;
@@ -15,6 +17,7 @@ body {
 }
 
 header {
+  border: $border solid;
   height: 422px;
   width: $width_basic;
   margin: 0 auto;
@@ -24,6 +27,8 @@ header {
 }
 
 section {
+  border: $border solid;
+  position: relative;
   width: $width_basic;
   margin: 0 auto;
   text-align: left;
@@ -31,15 +36,19 @@ section {
   #left {
     float: left;
     width: 200px;
+    border: $border solid;
   }
   #center {
     float: left;
     width: 760px;
     margin-left: 20px;
+    border: $border solid;
   }
 }
 
 footer {
+  border: $border solid;
+  position: relative;
   min-width: $width_basic;
   width: 100%;
   margin: 0 auto;
@@ -47,5 +56,6 @@ footer {
   clear: both;
   background: $color_back url('footer.jpg') bottom center no-repeat;
   display: block;
+  text-align: center;
 }
 

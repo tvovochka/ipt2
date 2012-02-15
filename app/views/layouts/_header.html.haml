@@ -19,9 +19,9 @@
 
       = form_for(:session, :url => sessions_path) do |f|
         .field
-          = f.email_field :email, { :placeholder => "user@example.ru", :required => true }
+          = f.email_field :email, { :placeholder => "user@example.ru", :required => true, :size => "20" }
         .field
-          = f.password_field :password, { :required => true, :placeholder => "***********" }
+          = f.password_field :password, { :required => true, :placeholder => "***********", :size => "20" }
         .actions
           = f.submit "ВХОД"
     - else
@@ -36,7 +36,7 @@
         %span
           = current_user.email 
       %p
-        = link_to "Редактировать профиль", current_user
+        = link_to "Редактировать профиль", edit_user_path(current_user)
       = form_for(:session, :url => signout_path, :method => :delete) do |f|
         .actions
           = f.submit "ВЫХОД"

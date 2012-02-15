@@ -109,20 +109,21 @@ nav {
 
   form {
     @include marpad;
-    margin: 10px 0px 0px;
+    /* margin: 10px 0px 0px; */
     position: absolute;
     bottom: 10px;
     right: 10px;
     .field {
       @include marpad;
       margin-bottom: 5px;
+      text-align: right;
       input {
         @include radius(3px);
         border: 3px solid;
-        width: 145px;
+        /* width: 150px; */
         height: 23px;
         border-color: #5b92bc;
-        padding: 0 5px;
+        /* padding: 0 5px; */
         color: #335e80;
       }
     }
@@ -159,4 +160,143 @@ nav {
 
 .error {
   color: red;
+}
+
+/* footer */
+.footer_content {
+  width: 990px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  text-align: left;
+  border: 0px solid;
+  height: 250px;
+
+  .feedback {
+    position: relative;
+    left: 37px;
+    top: 122px;
+    width: 110px;
+    font: 16px Arial;
+    color: #fff;
+    text-shadow: #213f57 1px 1px 0;
+    line-height: 0.9;
+
+    span {
+      font-weight: bold;
+      position: relative;
+      left: 55px;
+    }
+
+    a {
+      position: relative;
+      color: #fff;
+      font-size: 12px;
+      left: 10px;
+      top: 4px;
+    }
+  }
+
+  .contacts {
+    position: relative;
+    left: 232px;
+    color: #fff;
+    font: 12px Arial;
+    top: 34px;
+    text-shadow: #213f57 1px 1px 0;
+    line-height: 4px;
+    width: 250px;
+
+    p.p2 {
+      margin-left: 15px;
+    }
+    p.p3 {
+      margin-left: 30px;
+      margin-bottom: 10px;
+    }
+    p.p4 {
+      margin-left: 45px;
+      margin-top: 10px;
+    }
+
+    p.tel {
+      font-size: 16px;
+      line-height: 5px;
+      span {
+        font-weight: bold;
+      }
+      span.fax {
+        font: italic 12px Arial;
+      }
+    }
+  }
+
+  .search {
+    @include radius(3px);
+    position: absolute;
+    top: 110px;
+    right: 96px;
+    width: 285px;
+    height: 32px;
+    background-color: #fff;
+    color: #335e80;;
+    border: #5b92bc 3px solid;
+
+    img.lupa {
+      margin: 10px;
+      float: left;
+    }
+
+    
+
+  }
+
+  .developers {
+    position: absolute;
+    width: 300px;
+    height: 56px;
+    border: 0px solid;
+    right: 0px;
+    bottom: 0px;
+
+    .artgrand
+    {
+      /* position: relative; */
+      float: right;
+      height: 40px;
+      border: 0px solid;
+      width: 120px;
+      margin-top: 10px;
+      a {
+        text-decoration: none;
+        color: black;
+        span {
+          text-decoration: underline;
+        }
+
+        div {
+          text-align: left;
+          font: italic 12px Arial;
+          color: black;
+          line-height: 1.1;
+          float: left; 
+          margin: 7px -7px 0px 5px;
+        }  
+
+        .artgrand_logo  {
+          border: 0px;
+          float: left;
+        }
+      }
+    }
+    
+    .delim {
+      float: right;
+      margin: 10px 5px;
+    }
+
+    .tvovochka {
+
+    }
+  }
 }

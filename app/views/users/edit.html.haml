@@ -1,0 +1,26 @@
+%h2 Редактирование профиля
+
+= form_for(@user) do |f|
+  = render 'shared/error_messages', :object => f.object
+  .field
+    = f.label :name, "Имя"
+    %br
+    = f.text_field :name, { :autofocus => true, :required => true }
+  .field
+    = f.label :email
+    %br
+    = f.email_field :email, :required => true
+  .field
+    = f.label :password, "Пароль"
+    %br
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation, "Подтверждение"
+    %br
+    = f.password_field :password_confirmation
+  .actions
+    = f.submit "Обновить"
+
+  %div
+    = gravatar_for @user
+    = link_to "изменить", "http://gravatar.com/emails", :target => "_blank"
