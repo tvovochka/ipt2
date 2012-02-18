@@ -51,7 +51,7 @@ describe "LayoutLinks" do
       visit signin_path
       fill_in "Email", :with => @user.email
       fill_in "Пароль", :with => @user.password
-      click_button
+      click_button :page_submit
     end
 
     it "should have a signout link" do
