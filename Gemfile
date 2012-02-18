@@ -19,11 +19,13 @@ end
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'gravatar_image_tag'
+gem 'will_paginate'
 # gem 'slim-rails'
 
 group :development do
-	gem 'rspec-rails', '2.6.1'
+  gem 'rspec-rails', '2.6.1'
   gem 'annotate', '~> 2.4.1.beta'
+  gem 'faker'
 end
 
 group :test do
