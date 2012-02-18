@@ -4,11 +4,11 @@
   .field
     = f.label :email
     %br
-    = f.email_field :email, { :placeholder => "user@example.ru" , :autofocus => true, :required => true }
+    = f.email_field :email, { :placeholder => "user@example.ru" , :autofocus => true, :required => true, :id => 'page_email' }
   .field
     = f.label :password, "Пароль"
     %br
-    = f.password_field :password, :required => true
+    = f.password_field :password, { :required => true, :id => 'page_password' }
   .actions
     = f.submit "Войти", :id => 'page_submit'
 

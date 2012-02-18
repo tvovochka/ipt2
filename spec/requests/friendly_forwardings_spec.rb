@@ -7,8 +7,8 @@ describe "FriendlyForwardings" do
     user = Factory(:user)
     visit edit_user_path(user)
     # Тест автоматически следует перенаправить signin страницу.
-    fill_in "Email", :with => user.email
-    fill_in "Пароль", :with => user.password
+    fill_in :page_email, :with => user.email
+    fill_in :page_password, :with => user.password
     click_button :page_submit
     # The test follows the redirect again, this time to users/edit.
     # response.should have_selector('title', :content => "Редактирование")
