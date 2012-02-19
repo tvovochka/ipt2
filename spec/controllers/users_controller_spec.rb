@@ -178,9 +178,7 @@ describe UsersController do
         post :create, :user => @attr
         controller.should be_signed_in
       end
-
     end
-
   end
 
   describe "GET 'edit'" do
@@ -316,13 +314,19 @@ describe UsersController do
         delete :destroy, :id => @user
         response.should redirect_to(root_path)
       end
+
+      it "should no delete link" do
+        test_sign_in(@user)
+        get :index
+        response.should_not have_selector("ul.users a", :content => "удалить")
+      end
     end
 
     describe "as an admin user" do
 
       before(:each) do
-        admin = Factory(:user, :email => "admin@example.com", :admin => true)
-        test_sign_in(admin)
+        @admin = Factory(:user, :email => "admin@example.com", :admin => true)
+        test_sign_in(@admin)
       end
 
       it "should destroy the user" do
@@ -331,11 +335,43 @@ describe UsersController do
         end.should change(User, :count).by(-1)
       end
 
+      it "should not destroy yourself" do
+        lambda do
+          delete :destroy, :id => @admin
+        end.should_not change(User, :count).by(-1)
+      end
+
       it "should redirect to the users page" do
         delete :destroy, :id => @user
         response.should redirect_to(users_path)
       end
+
+      it "should delete link" do
+        get :index
+        response.should have_selector("ul.users a", :content => "удалить")
+      end
     end
   end
-  
+
+  describe "authentication of " do
+
+    before(:each) do
+      @user = Factory(:user)
+      test_sign_in(@user)
+      @attr = { :name => "New User", :email => "user@example.com",
+                :password => "foobar", 
+                :password_confirmation => "foobar"}
+    end
+
+    it "new page" do
+      get :new
+      response.should redirect_to(root_path)
+    end
+
+    it "create page" do
+      post :create, :user => @attr
+      response.should redirect_to(root_path)
+    end
+  end
+
 end
