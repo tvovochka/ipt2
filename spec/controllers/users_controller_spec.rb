@@ -47,11 +47,11 @@ describe UsersController do
       it "should paginate users" do
         get :index
         response.should have_selector("div.pagination")
-        response.should have_selector("span.disabled", :content => "Previous")
+        response.should have_selector("span.disabled", :content => "Предыдущие")
         response.should have_selector("a", :href => "/users?page=2",
                                            :content => "2")
         response.should have_selector("a", :href => "/users?page=2",
-                                           :content => "Next")
+                                           :content => "Следующие")
       end
     end
   end
