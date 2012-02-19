@@ -1,22 +1,6 @@
 %h2 Регистрация 
 
 = form_for(@user) do |f|
-  = render 'shared/error_messages', :object => f.object
-  .field
-    = f.label :name, "Имя"
-    %br
-    = f.text_field :name, { :autofocus => true, :placeholder => "Имя Фамилия", :required => true }
-  .field
-    = f.label :email
-    %br
-    = f.email_field :email, { :placeholder => "user@example.ru", :required => true }
-  .field
-    = f.label :password, "Пароль"
-    %br
-    = f.password_field :password, :required => true
-  .field
-    = f.label :password_confirmation, "Подтверждение"
-    %br
-    = f.password_field :password_confirmation, :required => true
+  = render 'fields', :f => f
   .actions
     = f.submit "Зарегистрироваться"
