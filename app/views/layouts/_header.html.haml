@@ -19,9 +19,9 @@
 
       = form_for(:session, :url => sessions_path) do |f|
         .field
-          = f.email_field :email, { :placeholder => "user@example.ru", :required => true, :size => "20" }
+          = f.email_field :email, { :placeholder => "user@example.ru", :required => true }
         .field
-          = f.password_field :password, { :required => true, :placeholder => "***********", :size => "20" }
+          = f.password_field :password, { :required => true, :placeholder => "***********" }
         .actions
           = f.submit "ВХОД"
     - else
