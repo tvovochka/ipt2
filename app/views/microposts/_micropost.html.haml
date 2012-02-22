@@ -1,0 +1,8 @@
+%tr
+  %td
+    %span.content
+      = micropost.content
+    %span.timestamp
+      Написал
+      = time_ago_in_words(micropost.created_at)
+      назад.

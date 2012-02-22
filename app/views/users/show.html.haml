@@ -1,3 +1,7 @@
 %h2 
   = gravatar_for @user
   = @user.name
+- unless @user.microposts.empty?
+  %table{ :class => "microposts", :summary => "User microposts" }
+    = render @microposts
+  will_paginate @microposts
