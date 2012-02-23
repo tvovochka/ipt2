@@ -6,3 +6,6 @@
       Написал
       = time_ago_in_words(micropost.created_at)
       назад.
+  - if current_user?(micropost.user)
+    %td
+      = link_to "delete", micropost, :method => :delete, :confirm => "Вы уверены?", :title => micropost.content
