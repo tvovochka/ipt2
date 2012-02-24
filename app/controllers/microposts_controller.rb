@@ -7,10 +7,10 @@ class MicropostsController < ApplicationController
     @micropost  = current_user.microposts.build(params[:micropost])
     if @micropost.save
       flash[:success] = "Сообщение создано!"
-      redirect_to root_path
+      redirect_to feedback_path
     else
       @feed_items = []
-      render 'pages/home'
+      render 'pages/feedback'
     end
   end
 

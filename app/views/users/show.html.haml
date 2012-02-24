@@ -2,17 +2,6 @@
   = gravatar_for @user
   = @user.name
 
-- if signed_in?
-  %table{ :class => "front", :summary => "Для зарегистрированных пользователей"}
-    %tr
-      %td.main
-        %h2.micropost
-          Что случилось?
-        = render 'shared/micropost_form'
-        = render 'shared/feed'
-      %td.sidebar.round
-        = render 'shared/user_info'
-
 - unless @user.microposts.empty?
   %table{ :class => "microposts", :summary => "Сообщения пользователя" }
     = render @microposts

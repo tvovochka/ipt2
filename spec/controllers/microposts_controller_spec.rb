@@ -37,7 +37,7 @@ describe MicropostsController do
 
       it "should render the home page" do
         post :create, :micropost => @attr
-        response.should render_template('pages/home')
+        response.should render_template('pages/feedback')
       end
     end
 
@@ -55,7 +55,7 @@ describe MicropostsController do
 
       it "should redirect to the home page" do
         post :create, :micropost => @attr
-        response.should redirect_to(root_path)
+        response.should redirect_to(feedback_path)
       end
 
       it "should have a flash message" do

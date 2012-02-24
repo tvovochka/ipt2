@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   end
 
   def feedback
+    if signed_in?
+      @micropost = Micropost.new
+      @feed_items = current_user.feed.paginate(:page => params[:page])
+    end
     @title = "Обратная связь"
   end
 
