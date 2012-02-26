@@ -1,0 +1,24 @@
+%table{ :summary => "Информация о читаемых/читающих" }
+  %tr
+    %td.main
+      %h2 #{@title}
+      - unless @users.empty?
+        %ul.users
+          = render @users
+        = will_paginate @users
+    %td.sidebar
+      %strong
+        Имя 
+      = @user.name
+      %br
+      %strong
+        URL
+      = link_to user_path(@user), @user
+      %br
+      %strong
+        Сообщения
+      = @user.microposts.count
+      = render 'shared/stats'
+      - unless @users.empty?
+        - @users.each do |user|
+          = link_to gravatar_for(user, :size => 30), user

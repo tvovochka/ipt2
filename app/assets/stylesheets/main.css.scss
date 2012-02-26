@@ -235,3 +235,43 @@ nav {
     }
   }
 }
+
+
+table.profile {
+  width: 100%;
+}
+td.micropost {
+  span.timestamp {
+    display: block;
+    font-size: 85%;
+    color: #666;
+  }
+}
+.sidebar {
+  vertical-align: top;
+  padding-top: 80px;
+  width: 150px;
+  background-color: #aaa;
+  @include radius(5px);
+  padding: 10px;
+
+  .user_info {
+    
+    a {
+      text-decoration: none;
+    }
+    span.user_name {
+      position: absolute;
+    }
+    span.microposts {
+      font-size: 80%;
+    }
+  }
+
+  .stats {
+    font-size: 70%;
+    a {
+      text-decoration: none;
+    }
+  }
+}

@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'haml-rails'
 gem 'gravatar_image_tag'
 gem 'will_paginate'
+gem 'russian', '~> 0.6.0'
 # gem 'slim-rails'
 
 group :development do

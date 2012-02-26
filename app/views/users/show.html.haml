@@ -1,8 +1,24 @@
-%h2 
-  = gravatar_for @user
-  = @user.name
-
-- unless @user.microposts.empty?
-  %table{ :class => "microposts", :summary => "Сообщения пользователя" }
-    = render @microposts
-  = will_paginate @microposts
+%table{ :class => "profile", :summary => "Информация пользователя" }
+  %tr
+    %td.main
+      %h2 
+        = gravatar_for @user
+        = @user.name
+      = render 'follow_form' if signed_in?
+      - unless @user.microposts.empty?
+        %table{ :class => "microposts", :summary => "Сообщения пользователя" }
+          = render @microposts
+        = will_paginate @microposts
+    %td.sidebar
+      %strong
+        Имя 
+      = @user.name
+      %br
+      %strong
+        URL
+      = link_to user_path(@user), @user
+      %br
+      %strong
+        Сообщения
+      = @user.microposts.count
+      = render 'shared/stats'

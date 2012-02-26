@@ -1,0 +1,14 @@
+- @user ||= current_user
+.stats
+  %table{ :summary => "User stats" }
+    %tr
+      %td
+        %a{ :href => following_user_path(@user) }
+          %span.stat#following
+            = @user.following.count
+            = Russian::pluralize(@user.followers.count, "читаемый", "читаемых", "читаемых")
+      %td
+        %a{ :href => followers_user_path(@user) }
+          %span#followers.stat
+            = @user.followers.count
+            = Russian::pluralize(@user.followers.count, "читающий", "читающих", "читающих")
